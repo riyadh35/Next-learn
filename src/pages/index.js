@@ -12,7 +12,7 @@ export default function Home() {
   const router = useRouter();
 
   const handleclick = () => {
-
+    router.replace("/about")
   }
   return (
     <div>
@@ -20,7 +20,6 @@ export default function Home() {
       <Link href="/about">
         <h3>Go to about page</h3>
       </Link>
-
       <button onClick={handleclick}>Form Submitted</button>
     </div>
   )
