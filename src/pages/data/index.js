@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 function Postlist({ data }) {
     return (
         <div>
@@ -6,7 +8,9 @@ function Postlist({ data }) {
                 data.map((post) => {
                     return (
                         <div key={post.id}>
-                            <h1>{post.title}</h1>
+                            <Link href={`/data/{post.id}`} passHref>
+                                <h1>{post.title}</h1>
+                            </Link>
                             <p>{post.body}</p>
                         </div>
                     )
@@ -27,5 +31,5 @@ export async function getStaticProps(ctx) {
         }
     }
 }
-
+3
 export default Postlist;
